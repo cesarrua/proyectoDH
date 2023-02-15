@@ -9,6 +9,7 @@ app.listen(3000, () => console.log("servidor corriendo"));
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
+//conexion a la base de datos
 try {
     db.authenticate();
     db.sync();
