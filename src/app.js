@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const db = require('../config/db');
+const router = require('../src/routes/router')
 
 app.listen(3000, () => console.log("servidor corriendo"));
 
@@ -17,3 +18,5 @@ try {
 } catch (error) {
     console.log(error);
 };
+
+app.use('/', router );
