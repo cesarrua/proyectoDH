@@ -7,6 +7,24 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Hola, nos estamos jodiendo la vida </h1>
+
+    <header>
+        <a href="/users/login">Ingresar</a>
+        <a href="/users/registro">Registro</a>
+
+        <form action="/users/cerrar-sesion" method="POST">
+          <input type="submit" value="Cerrar Sesion">
+        </form>
+    </header>
+    <main>
+        <section>
+          <% for (let i=0; i<movies.length; i++) {%>
+            <div>
+              <h2><%= movies[i].title %></h2>
+              <a href="movies/movieDetail/<%= movies[i].id %>">Ver detalles de: <%= movies[i].title %></a>
+            </div>
+          <% } %>   
+        </section>
+      </main>
 </body>
 </html>

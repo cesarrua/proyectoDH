@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Editando.... <%= movie.title %></h1>
+
+    <% errores.forEach(error => { %>
+        <p><%= error.msg %></p>
+    <% }) %>
+
+    <main>
+        <form action="/movies/movieEdit/<%= movie.id%>" method="POST">
+
+            <div>
+                <label for="title">Titulo</label>
+                <input type="text" name="title" placeholder="<%= movie.title %>">
+            </div>
+
+            <div>
+                <label for="rating">Rating</label>
+                <input type="text" name="rating" placeholder="<%= movie.rating %>">
+            </div>
+
+            <div>
+                <label for="awards">awards</label>
+                <input type="text" name="awards" placeholder="<%= movie.awards %>">
+            </div>
+
+            <div>
+                <label for="release_date">release_date</label>
+                <input type="date" name="release_date" placeholder="<%= movie.release_date %>">
+            </div>
+
+            <div>
+                <label for="length">length</label>
+                <input type="text" name="length" placeholder="<%= movie.length %>">
+            </div>
+
+            <div>
+                <label for="genre">Generos</label>
+                <select name="genre">
+                    <% genre.forEach(genres =>{ %>
+                        <option value="<%= genres.id %>"><%= genres.name %></option>
+                    <% }) %>
+                </select>
+            </div>
+
+            <div>
+                <button type="submit">Terminar Edicion</button>
+            </div>
+        </form>
+
+        <div>
+            <form action="/movies/<%= movie.id %>" method="POST">
+                <input type="submit" value="Eliminar">
+            </form>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Pelicula</title>
+</head>
+<body>
+    <h1>Creacion de peluculas :D</h1>
+
+    <% errores.forEach(error => { %>
+        <p><%= error.msg %></p>
+    <% }) %>
+
+    <main>
+        <form action="/movies/movieCreate" method="POST">
+            <div>
+                <label for="title">Titulo</label>
+                <input type="text" name="title">
+            </div>
+
+            <div>
+                <label for="rating">Rating</label>
+                <input type="text" name="rating">
+            </div>
+
+            <div>
+                <label for="awards">awards</label>
+                <input type="text" name="awards">
+            </div>
+
+            <div>
+                <label for="release_date">release_date</label>
+                <input type="date" name="release_date">
+            </div>
+
+            <div>
+                <label for="length">length</label>
+                <input type="text" name="length">
+            </div>
+
+            <div>
+                <label for="genre">Generos</label>
+                <select name="genre">
+                    <% genre.forEach(genres =>{ %>
+                        <option value="<%= genres.id %>"><%= genres.name %></option>
+                    <% }) %>
+                </select>
+            </div>
+
+            <div>
+                <button type="submit">Terminar de crear</button>
+            </div>
+        </form>
+    </main>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<body>
+  <form action="/users/login" method="POST">
+    <% errores?.forEach(error=> { %>
+        <p>
+        <%= error.msg %>
+        </p>
+    <% }) %>
+
+    <main>
+      <section>
+        <h1>LOGIN</h1>
+
+        <div>
+          <label for="email">E-mail</label>
+          <input type="text" name="email">
+        </div>
+        <div>
+          <label for="password">Contraseña</label>
+          <input type="password" name="password" id="password">
+        </div>
+
+        <div>
+          <button type="submit">Ingresar</button>
+        </div>
+
+        </seciton>
+    </main>
+  </form>
+
+  <div>
+    <p>¿No tienes una cuenta?<a href="/users/registro">Registrate</a></p>
+</div>
+</body>
+
+</html>

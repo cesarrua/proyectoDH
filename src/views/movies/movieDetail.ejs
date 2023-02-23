@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle de la Pelicula</title>
+</head>
+
+<body>
+    <h1>Detalle de la pelicula <%= movie.title %></h1>
+    <main>
+            <div>
+                <label>Titulo: <%= movie.title %></label>
+            </div>
+
+            <div>
+                <label>Rating: <%= movie.rating %></label>
+            </div>
+
+            <div>
+                <label>awards: <%= movie.awards %></label>
+            </div>
+
+            <div>
+                <label>release_date: <%= movie.release_date %></label>
+            </div>
+
+            <div>
+                <label>length: <%= movie.length %></label>
+            </div>
+
+            <div>
+                <a href="/">Volver Al Inicio</a>
+            </div>
+
+            <div>
+                <a href="/movies/movieEdit/<%= movie.id %>">Editar</a>
+            </div>
+    </main>
+</body>
+</html>

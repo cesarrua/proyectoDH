@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrate !</title>
+</head>
+
+<body>
+    <form action="/users/registro" method="POST">
+
+        <% errores?.forEach(error => { %>
+            <p><%= error.msg %></p>
+        <% }) %>
+
+        <main>
+            <section>
+                <h1>Crea tu cuenta</h1>
+
+                <div>
+                    <label for="nombre">Nombre completo</label>
+                    <input type="text" name="nombre">
+                </div>
+
+                <div>
+                    <label for="email">Correo electrónico</label>
+                    <input type="email" name="email">
+                    <div>
+                        <label for="password">Ingresa una contraseña</label>
+                        <input type="password" name="password">
+                    </div>
+
+                    <div>
+                        <label for="repassword">Repite la contraseña</label>
+                        <input type="password" name="repassword">
+                    </div>
+
+                    <div>
+                        <button type="submit">Continuar</button>
+                    </div>
+            </section>
+        </main>
+    </form>
+
+    <div>
+        <p>¿Ya tienes una cuenta?<a href="/users/login">Ingresa</a></p>
+    </div>
+
+</body>
+
+</html>
