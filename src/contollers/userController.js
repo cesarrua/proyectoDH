@@ -50,7 +50,7 @@ const cerrarSesion = (req, res) => {
     return res.clearCookie('_token').status(200).redirect('/')
 }
 
-// Logica para la creacion del usuario
+
 const registrar = async (req, res) => {
     // Validacion
     await check('nombre').notEmpty().withMessage('El nombre es obligatorio').run(req)
